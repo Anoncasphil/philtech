@@ -27,10 +27,24 @@ import {
 type TabKey = 'home' | 'projects' | 'experience' | 'education' | 'contact'
 
  function App() {
-  const [activeTab, setActiveTab] = useState<TabKey>('home')
+  const [activeTab, setActiveTab] = useState<TabKey>(() => {
+    try {
+      const stored = localStorage.getItem('activeTab') as TabKey | null
+      if (stored === 'home' || stored === 'projects' || stored === 'experience' || stored === 'education' || stored === 'contact') {
+        return stored
+      }
+    } catch {}
+    return 'home'
+  })
   const [theme, setTheme] = useState<'light' | 'dark'>(() =>
     document.documentElement.classList.contains('dark') ? 'dark' : 'light'
   )
+
+  useEffect(() => {
+    try {
+      localStorage.setItem('activeTab', activeTab)
+    } catch {}
+  }, [activeTab])
 
   useEffect(() => {
     const root = document.documentElement
@@ -441,6 +455,40 @@ type TabKey = 'home' | 'projects' | 'experience' | 'education' | 'contact'
                       </div>
                     </div>
                   </div>
+
+                  {/* IoT Capstone */}
+                  <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg p-6 hover:border-gray-900 dark:hover:border-white transition-colors">
+                    <div className="flex items-start gap-4">
+                      <div className="flex-shrink-0 w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-lg flex items-center justify-center">
+                        <Cloud className="h-6 w-6 text-gray-900 dark:text-white" />
+                      </div>
+                      <div className="flex-1">
+                        <div className="flex items-start justify-between mb-3">
+                          <div>
+                            <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-1">IOT Based Water Monitoring and Management System (Capstone Project)</h3>
+                            <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
+                              <MapPin className="h-4 w-4" />
+                              <span>National University Fairview</span>
+                            </div>
+                          </div>
+                          <div className="flex items-center gap-1 text-sm text-gray-600 dark:text-gray-400">
+                            <Calendar className="h-4 w-4" />
+                            <span>Oct 2025</span>
+                          </div>
+                        </div>
+                        <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+                          Developed an IoT-based system designed to monitor and manage swimming pool water quality in real time. Designed a PHP-MySQL backend for data storage, analytics, and visualization of sensor readings. Focused on improving resource efficiency, reducing manual labor, and promoting sustainable water management practices.
+                        </p>
+                        <div className="flex flex-wrap gap-2">
+                          <span className="px-3 py-1 text-xs font-medium text-gray-600 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 rounded-full">PHP</span>
+                          <span className="px-3 py-1 text-xs font-medium text-gray-600 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 rounded-full">MySQL</span>
+                          <span className="px-3 py-1 text-xs font-medium text-gray-600 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 rounded-full">IoT</span>
+                          <span className="px-3 py-1 text-xs font-medium text-gray-600 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 rounded-full">Sensors</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
                   <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg p-6 hover:border-gray-900 dark:hover:border-white transition-colors">
                     <div className="flex items-start gap-4">
                       <div className="flex-shrink-0 w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-lg flex items-center justify-center">
@@ -457,7 +505,7 @@ type TabKey = 'home' | 'projects' | 'experience' | 'education' | 'contact'
                           </div>
                           <div className="flex items-center gap-1 text-sm text-gray-600 dark:text-gray-400">
                             <Calendar className="h-4 w-4" />
-                            <span>Mar 2025</span>
+                            <span>Feb 2025</span>
                           </div>
                         </div>
                         <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
@@ -473,6 +521,8 @@ type TabKey = 'home' | 'projects' | 'experience' | 'education' | 'contact'
                       </div>
                     </div>
                   </div>
+
+
 
                   <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg p-6 hover:border-gray-900 dark:hover:border-white transition-colors">
                     <div className="flex items-start gap-4">
@@ -593,26 +643,6 @@ type TabKey = 'home' | 'projects' | 'experience' | 'education' | 'contact'
                           <GraduationCap className="h-6 w-6 text-gray-900 dark:text-white" />
                         </div>
                         <div className="flex-1">
-                          {/* Senior High School */}
-                          <div className="mb-8">
-                            <div className="flex items-start justify-between mb-3">
-                              <div>
-                                <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">Senior High School – STEM Strand</h4>
-                                <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
-                                  <MapPin className="h-4 w-4" />
-                                  <span>St. Francis Technical Institute</span>
-                                </div>
-                              </div>
-                              <div className="flex items-center gap-1 text-sm text-gray-600 dark:text-gray-400">
-                                <Calendar className="h-4 w-4" />
-                                <span>June 2020 - July 2022</span>
-                              </div>
-                            </div>
-                            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                              Focus on Science, Technology, Engineering, and Mathematics. Participated in school activities and group research projects.
-                            </p>
-                          </div>
-
                           <div className="flex items-start justify-between mb-3">
                             <div>
                               <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">Bachelor of Science in Information Technology</h4>
@@ -635,6 +665,33 @@ type TabKey = 'home' | 'projects' | 'experience' | 'education' | 'contact'
                             <CheckCircle className="h-4 w-4" />
                             <span>Expected Graduation: 2026</span>
                           </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Senior High School Card */}
+                    <div className="mt-6 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg p-6 hover:border-gray-900 dark:hover:border-white transition-colors">
+                      <div className="flex items-start gap-4">
+                        <div className="flex-shrink-0 w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-lg flex items-center justify-center">
+                          <GraduationCap className="h-6 w-6 text-gray-900 dark:text-white" />
+                        </div>
+                        <div className="flex-1">
+                          <div className="flex items-start justify-between mb-3">
+                            <div>
+                              <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">Senior High School – STEM Strand</h4>
+                              <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
+                                <MapPin className="h-4 w-4" />
+                                <span>St. Francis Technical Institute</span>
+                              </div>
+                            </div>
+                            <div className="flex items-center gap-1 text-sm text-gray-600 dark:text-gray-400">
+                              <Calendar className="h-4 w-4" />
+                              <span>June 2020 - July 2022</span>
+                            </div>
+                          </div>
+                          <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                            Focus on Science, Technology, Engineering, and Mathematics. Participated in school activities and group research projects.
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -1023,7 +1080,7 @@ type TabKey = 'home' | 'projects' | 'experience' | 'education' | 'contact'
                   <div className="space-y-6">
                     <div>
                       <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Send a Message</h3>
-                      <form className="space-y-4">
+                      <form id="contact-form" action="https://formspree.io/f/xeopanaj" method="POST" autoComplete="off" className="space-y-4">
                         <div className="grid sm:grid-cols-2 gap-4">
                           <div>
                             <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
@@ -1031,7 +1088,9 @@ type TabKey = 'home' | 'projects' | 'experience' | 'education' | 'contact'
                             </label>
                             <input 
                               id="name"
+                              name="name"
                               type="text" 
+                              autoComplete="off"
                               className="w-full rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 px-4 py-3 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:border-gray-900 dark:focus:border-white focus:ring-1 focus:ring-gray-900 dark:focus:ring-white transition-colors" 
                               placeholder="Your name" 
                             />
@@ -1042,7 +1101,9 @@ type TabKey = 'home' | 'projects' | 'experience' | 'education' | 'contact'
                             </label>
                             <input 
                               id="email"
+                              name="email"
                               type="email" 
+                              autoComplete="off"
                               className="w-full rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 px-4 py-3 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:border-gray-900 dark:focus:border-white focus:ring-1 focus:ring-gray-900 dark:focus:ring-white transition-colors" 
                               placeholder="your@email.com" 
                             />
@@ -1055,7 +1116,9 @@ type TabKey = 'home' | 'projects' | 'experience' | 'education' | 'contact'
                           </label>
                           <input 
                             id="subject"
+                            name="subject"
                             type="text" 
+                            autoComplete="off"
                             className="w-full rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 px-4 py-3 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:border-gray-900 dark:focus:border-white focus:ring-1 focus:ring-gray-900 dark:focus:ring-white transition-colors" 
                             placeholder="What's this about?" 
                           />
@@ -1067,7 +1130,9 @@ type TabKey = 'home' | 'projects' | 'experience' | 'education' | 'contact'
                           </label>
                           <textarea 
                             id="message"
+                            name="message"
                             rows={6}
+                            autoComplete="off"
                             className="w-full rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 px-4 py-3 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:border-gray-900 dark:focus:border-white focus:ring-1 focus:ring-gray-900 dark:focus:ring-white transition-colors resize-none" 
                             placeholder="Tell me about your project or just say hello..."
                           />
@@ -1077,6 +1142,7 @@ type TabKey = 'home' | 'projects' | 'experience' | 'education' | 'contact'
 
                     <button 
                       type="submit"
+                      form="contact-form"
                       className="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-gray-900 dark:bg-white px-6 py-3 text-white dark:text-gray-900 font-semibold hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-900 dark:focus:ring-white focus:ring-offset-2"
                     >
                       <Mail className="h-5 w-5" /> 
