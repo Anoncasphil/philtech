@@ -1,23 +1,28 @@
-# React + TypeScript + Tailwind Template
+# Philtech – Personal Website
 
-A minimal, fast starter built with Vite, React 19, TypeScript, and Tailwind CSS. Use this as a template to bootstrap new projects quickly.
+A minimalistic personal website built with React, TypeScript, Tailwind CSS, and Vite. It showcases projects, experience, education/certifications, and a contact form with a clean two-color theme (light: `#111827` on white, dark: white on black).
+
+## Tech Stack
+- React 19 + TypeScript
+- Tailwind CSS
+- Vite
+- Lucide React (icons)
 
 ## Features
-
-- Vite dev server with instant HMR and optimized production build
-- React 19 + TypeScript for a great developer experience
-- Tailwind CSS preconfigured via PostCSS (autoprefixer included)
-- Clean structure and minimal dependencies
+- 3-column hero layout with responsive design
+- Projects section with minimal 2-column cards and fixed bottom action
+- Experience and Education tabs with monochrome cards and icons
+- Certifications with sources and years
+- Contact tab: two-column info + form, aligned actions
+- Theme-aware logo and minimal custom scrollbar (light/dark)
 
 ## Getting Started
 
 ### Prerequisites
 - Node.js LTS (18+ recommended)
-- npm (bundled with Node) or pnpm/yarn
 
 ### Install
 ```bash
-cd learnify
 npm install
 ```
 
@@ -25,61 +30,37 @@ npm install
 ```bash
 npm run dev
 ```
-Open the printed local URL in your browser.
 
 ### Build
 ```bash
 npm run build
 ```
-Build artifacts are output to `dist/`.
 
 ### Preview production build
 ```bash
 npm run preview
 ```
 
-## Tailwind CSS
-- Source CSS: `src/index.css` contains the Tailwind directives.
-- Config: `tailwind.config.js` scans `./index.html` and `./src/**/*.{js,jsx,ts,tsx,mdx}`.
-- PostCSS: `postcss.config.cjs` loads `tailwindcss` and `autoprefixer`.
-
-If you see an editor warning like "Unknown at rule @tailwind", ensure:
-- Dev deps are installed:
-  ```bash
-  npm i -D postcss autoprefixer tailwindcss
-  ```
-- Your editor has Tailwind CSS IntelliSense, or disable CSS at-rule validation for the workspace.
-
-## Scripts
-- `npm run dev` – Start Vite dev server
-- `npm run build` – Type-check and build for production
-- `npm run preview` – Preview the production build
-- `npm run lint` – Run ESLint
-
 ## Project Structure
 ```
-learnify/
-  src/
-    main.tsx         # App entry
-    App.tsx          # Template UI
-    index.css        # Tailwind directives
-  tailwind.config.js
-  postcss.config.cjs
-  vite.config.ts
-  package.json
+react-ts-tailwind-template/
+├─ public/
+├─ src/
+│  ├─ App.tsx
+│  ├─ main.tsx
+│  ├─ index.css
+│  └─ assets/
+├─ index.html
+├─ tailwind.config.js
+├─ tsconfig.json
+└─ vite.config.ts
 ```
 
-## Customization
-- Edit the hero copy in `src/App.tsx`.
-- Add new components to `src/` and import into `App.tsx`.
-- Update Tailwind theme in `tailwind.config.js` if needed.
-
-## Troubleshooting
-- PostCSS plugin error (autoprefixer not found):
-  ```bash
-  npm i -D postcss autoprefixer
-  ```
-- Tailwind classes not applied: ensure `content` paths include `index.html` and `src/**/*` and restart the dev server.
+## Conventions
+- Prefer TypeScript and descriptive naming
+- Tailwind utility classes; keep styles minimal and readable
+- External links: `target="_blank" rel="noopener noreferrer"`
+- Palette constrained to white and `#111827`
 
 ## License
 MIT
