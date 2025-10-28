@@ -594,6 +594,26 @@ type TabKey = 'home' | 'projects' | 'experience' | 'education' | 'contact'
                           <GraduationCap className="h-6 w-6 text-gray-900 dark:text-white" />
                         </div>
                         <div className="flex-1">
+                          {/* Senior High School */}
+                          <div className="mb-8">
+                            <div className="flex items-start justify-between mb-3">
+                              <div>
+                                <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">Senior High School – STEM Strand</h4>
+                                <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
+                                  <MapPin className="h-4 w-4" />
+                                  <span>St. Francis Technical Institute</span>
+                                </div>
+                              </div>
+                              <div className="flex items-center gap-1 text-sm text-gray-600 dark:text-gray-400">
+                                <Calendar className="h-4 w-4" />
+                                <span>June 2020 - July 2022</span>
+                              </div>
+                            </div>
+                            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                              Focus on Science, Technology, Engineering, and Mathematics. Participated in school activities and group research projects.
+                            </p>
+                          </div>
+
                           <div className="flex items-start justify-between mb-3">
                             <div>
                               <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">Bachelor of Science in Information Technology</h4>
@@ -628,6 +648,22 @@ type TabKey = 'home' | 'projects' | 'experience' | 'education' | 'contact'
                       Certifications
                     </h3>
                     <div className="grid gap-4">
+                      {/* Top: Salesforce Certification */}
+                      <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg p-4 hover:border-gray-900 dark:hover:border-white transition-colors">
+                        <div className="flex items-start gap-3">
+                          <div className="flex-shrink-0 w-8 h-8 bg-gray-100 dark:bg-gray-800 rounded-lg flex items-center justify-center">
+                            <Cpu className="h-4 w-4 text-gray-900 dark:text-white" />
+                          </div>
+                          <div className="flex-1">
+                            <div className="flex items-start justify-between mb-1">
+                              <h4 className="text-base font-semibold text-gray-900 dark:text-white">Agentforce Unlocked: Learning the Salesforce AI Service Platform</h4>
+                              <span className="text-sm text-gray-600 dark:text-gray-400">2025</span>
+                            </div>
+                            <p className="text-sm text-gray-600 dark:text-gray-400">Certified</p>
+                          </div>
+                        </div>
+                      </div>
+
                       {/* Cybersecurity Certifications */}
                       <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg p-4 hover:border-gray-900 dark:hover:border-white transition-colors">
                         <div className="flex items-start gap-3">
@@ -659,21 +695,7 @@ type TabKey = 'home' | 'projects' | 'experience' | 'education' | 'contact'
                         </div>
                       </div>
 
-                      {/* AI & Salesforce */}
-                      <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg p-4 hover:border-gray-900 dark:hover:border-white transition-colors">
-                        <div className="flex items-start gap-3">
-                          <div className="flex-shrink-0 w-8 h-8 bg-gray-100 dark:bg-gray-800 rounded-lg flex items-center justify-center">
-                            <Cpu className="h-4 w-4 text-gray-900 dark:text-white" />
-                          </div>
-                          <div className="flex-1">
-                            <div className="flex items-start justify-between mb-1">
-                              <h4 className="text-base font-semibold text-gray-900 dark:text-white">Agentforce Unlocked: Learning the Salesforce AI Service Platform</h4>
-                              <span className="text-sm text-gray-600 dark:text-gray-400">2025</span>
-                            </div>
-                            <p className="text-sm text-gray-600 dark:text-gray-400">Certified</p>
-                          </div>
-                        </div>
-                      </div>
+                      {/* AI */}
 
                       <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg p-4 hover:border-gray-900 dark:hover:border-white transition-colors">
                         <div className="flex items-start gap-3">
