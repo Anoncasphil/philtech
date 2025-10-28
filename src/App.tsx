@@ -16,7 +16,6 @@ import {
   Award,
   Calendar,
   MapPin,
-  ExternalLink,
   Shield,
   Cloud,
   Cpu,
@@ -357,7 +356,7 @@ type TabKey = 'home' | 'projects' | 'experience' | 'education' | 'contact'
                       href: 'https://triple7autosupply.com/',
                       desc: 'Business website with integrated inventory management system for automotive parts supplier, featuring product catalog and contact management.'
                     },
-                  ].map((project, index) => (
+                  ].map((project) => (
                     <article
                       key={project.title}
                       className="group bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 hover:border-gray-900 dark:hover:border-white transition-all duration-300 overflow-hidden flex flex-col h-full"
