@@ -142,7 +142,7 @@ type TabKey = 'home' | 'projects' | 'experience' | 'education' | 'contact'
                     </h1>
                     <p className="text-xl text-gray-600 dark:text-gray-300 mb-4">Web Developer</p>
                     <p className="text-lg text-gray-700 dark:text-gray-200 mb-6">
-                      BSIT Student at National University Fairview<br />
+                      BSIT Graduate at National University Fairview<br />
                       Specializing in Mobile & Internet Technology
                     </p>
                     
@@ -191,8 +191,8 @@ type TabKey = 'home' | 'projects' | 'experience' | 'education' | 'contact'
                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                      <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
                        <h3 className="text-sm font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-4">Status</h3>
-                       <p className="text-lg font-semibold text-gray-900 dark:text-white mb-1">Student Developer</p>
-                       <p className="text-sm text-gray-600 dark:text-gray-300">Seeking internship opportunities</p>
+                       <p className="text-lg font-semibold text-gray-900 dark:text-white mb-1">Freelance Web Developer</p>
+                       <p className="text-sm text-gray-600 dark:text-gray-300">Seeking Job Opportunities</p>
                      </div>
                      
                      <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700">
@@ -214,13 +214,7 @@ type TabKey = 'home' | 'projects' | 'experience' | 'education' | 'contact'
                    <h2 className="text-2xl font-semibold mb-6 text-gray-900 dark:text-white">About Me</h2>
                    <div className="prose prose-gray dark:prose-invert max-w-none">
                      <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-lg mb-4">
-                       I'm a passionate BSIT student at National University Fairview, specializing in Mobile & Internet Technology. 
-                       My journey into development began with curiosity about how websites and applications work, 
-                       and it has evolved into a deep passion for creating innovative solutions.
-                     </p>
-                     <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-lg">
-                       I've built several projects including a comprehensive Resort Reservation System, IoT-based water monitoring platform, 
-                       and inventory management systems. I'm always eager to learn new technologies and take on challenging projects.
+                       I'm a Full Stack Developer with experience building web, mobile, and enterprise applications. During my internship, I developed and customized Odoo ERP solutions, built REST APIs, and created automation workflows using Python, JavaScript, Flutter, GitLab CI/CD, and n8n. I enjoy solving real-world problems through technology and continuously expanding my expertise in full-stack development, cloud technologies, and software automation.
                      </p>
                    </div>
                  </div>
@@ -421,8 +415,45 @@ type TabKey = 'home' | 'projects' | 'experience' | 'education' | 'contact'
                   <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">Work Experience</h2>
                   <p className="text-gray-600 dark:text-gray-400">My professional journey and achievements</p>
                 </div>
+
+                
                 
                 <div className="space-y-6">
+                  {/* Odoo Experience */}
+                  <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg p-6 hover:border-gray-900 dark:hover:border-white transition-colors">
+                    <div className="flex items-start gap-4">
+                      <div className="flex-shrink-0 w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-lg flex items-center justify-center">
+                        <Code className="h-6 w-6 text-gray-900 dark:text-white" />
+                      </div>
+                      <div className="flex-1">
+                        <div className="flex items-start justify-between mb-3">
+                          <div>
+                            <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-1">Full Stack Developer Intern</h3>
+                            <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
+                              <MapPin className="h-4 w-4" />
+                              <span>Achieve Without Borders, Inc.</span>
+                            </div>
+                          </div>
+                          <div className="flex items-center gap-1 text-sm text-gray-600 dark:text-gray-400">
+                            <Calendar className="h-4 w-4" />
+                            <span>Nov 2025 - May 2026</span>
+                          </div>
+                        </div>
+                        <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+                          Developed and customized enterprise-grade Odoo ERP solutions across multiple Odoo versions, including customer management, billing, sales orders, invoicing, and workflow automation systems. Designed AI-assisted n8n workflows integrated with GitLab CI/CD to automate internal website updates, validate deployment readiness, and streamline approval-based deployments for non-technical staff. Built mobile and web-based full-stack applications using Flutter, Python, JavaScript, and REST APIs to support scalable and modern business operations.
+                        </p>
+                        <div className="flex flex-wrap gap-2">
+                          <span className="px-3 py-1 text-xs font-medium text-gray-600 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 rounded-full">Odoo</span>
+                          <span className="px-3 py-1 text-xs font-medium text-gray-600 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 rounded-full">Python</span>
+                          <span className="px-3 py-1 text-xs font-medium text-gray-600 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 rounded-full">XML</span>
+                          <span className="px-3 py-1 text-xs font-medium text-gray-600 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 rounded-full">Javascript</span>
+                          <span className="px-3 py-1 text-xs font-medium text-gray-600 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 rounded-full">n8n</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
                   {/* Personal Project */}
                   <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg p-6 hover:border-gray-900 dark:hover:border-white transition-colors">
                     <div className="flex items-start gap-4">
